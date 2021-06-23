@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clock and Stopwatch</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+        <div class="container text-center">
+          <h2>Choose an option</h2>
+          <!-- Trigger the modal with a button -->
+          <button type="button" class="btn btn-warning btn-lg" id="myBtnClock">Clock</button>
+          <button type="button" class="btn btn-warning btn-lg" id="myBtnStop">Stopwatch</button>
+        
+          <!-- Modal Clock-->
+          <div class="modal fade" id="myModalClock" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Simple Watch</h4>
+                </div>
+                <div class="modal-body">
+                  <p>The time is </p><p id="clock"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+  
+          <!-- Modal Stop-->
+          <div class="modal fade" id="myModalStop" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Stopwatch</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="wrapper">
+                    <div id="stopwatch">00:00:00:00</div>
+                    <ul id="buttons"> 
+                      <button class="btn btn-success btn-lg" id="start">Start</button>
+                      <button class="btn btn-danger btn-lg" id="pause">Stop</button>
+                      <button class="btn btn-primary btn-lg" id="reset">Reset</button>
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>       
+        </div>
+        <footer class="panel-footer py-5 mt-5"> 
+          <div class="container"> 
+            <p>Abigail Zárate Pérez</p> 
+            <p>June 17th, 2021</p> 
+          </div> 
+        </footer>
+        
+        <script>
+        $(document).ready(function(){
+          $("#myBtnClock").click(function(){
+            $("#myModalClock").modal();
+          });
+
+          $("#myBtnStop").click(function(){
+            $("#myModalStop").modal();
+          });
+        });
+        </script>
+        <script src="stopwatch.js"></script>
+        <script src="clock.js"></script>
+</body>
+</html>
